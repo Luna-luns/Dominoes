@@ -2,11 +2,11 @@ class PrintFunctions:
     def print_header(self) -> None:
         print('=' * 70)
 
-    def print_stock_size(self, stock: list) -> None:
-        print(f'Stock size: {len(stock)}')
+    def print_stock_size(self, size: int) -> None:
+        print(f'Stock size: {size}')
 
-    def print_number_comp_pieces(self, comp_pieces: list) -> None:
-        print(f'Computer pieces: {len(comp_pieces)}')
+    def print_comp_pieces_size(self, size: int) -> None:
+        print(f'Computer pieces: {size}')
 
     def print_domino_snake(self, snake: list) -> None:
         print(f'\n{snake}\n')\
@@ -21,3 +21,18 @@ class PrintFunctions:
             print('\n' + 'Status: Computer is about to make a move. Press Enter to continue...')
         else:
             print('\n' + "Status: It's your turn to make a move. Enter your command.")
+
+    def print_comp_wins(self) -> None:
+        print('\n' + 'Status: The game is over. The computer won!')
+
+    def print_pl_wins(self) -> None:
+        print('\n' + 'Status: The game is over. You won!')
+
+    def print_draw(self) -> None:
+        print('\n' + "Status: The game is over. It's a draw!")
+
+    def print_domino(self, domino: list) -> None:
+        print(domino)
+
+    def print_hidden_snake(self, snake: str) -> None:
+        print(snake)
