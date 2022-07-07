@@ -1,9 +1,4 @@
-from user_interface import UserInterface
-
-
 class Player:
-    user = UserInterface()
-
     def __init__(self, player_pieces: list):
         self.player_pieces = player_pieces
         self.pieces_size = len(self.player_pieces)

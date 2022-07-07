@@ -5,4 +5,5 @@ class UserInterface:
     def is_input_number(self, command: str) -> bool:
         return command.lstrip('-').isdigit()
 
-
+    def approve_comp_move(self) -> str:
+        return input()

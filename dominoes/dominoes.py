@@ -107,6 +107,7 @@ while True:
         player = Player(player_pieces)
         stock = Stock(stock_pieces)
     else:
+        user.approve_comp_move()
         number = computer.choose_number_to_move()
 
         if -6 <= number < 0 or 0 < number <= 6:
