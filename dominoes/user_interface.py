@@ -32,11 +32,11 @@ def print_status(status: Status) -> None:
     elif Status.OPPONENT_MOVE == status:
         print('\n' + 'Status: Computer is about to make a move. Press Enter to continue...')
     elif Status.PLAYER_WIN == status:
-        print("PLAYER WIN")
+        print('\n' + "Status: The game is over. You won!")
     elif Status.OPPONENT_WIN == status:
-        print("OPPONENT_WIN")
+        print('\n' + "Status: The game is over. The computer won!")
     elif Status.DRAW == status:
-        print("DRAW")
+        print('\n' + "Status: The game is over. It's a draw!")
 
 
 def ask_number() -> int:

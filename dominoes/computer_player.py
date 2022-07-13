@@ -10,6 +10,7 @@ class ComputerPlayer(Player):
         pass
 
     def make_move(self, field: Field, stock: DominoStock) -> None:
+        input()
         size = self.player_hand.size()
         number = random.randint(-size, size)
 
