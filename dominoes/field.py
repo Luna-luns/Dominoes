@@ -1,5 +1,6 @@
 from domino import Domino
 from typing import List
+from illegal_move_error import IllegalMoveError
 
 
 class Field:
@@ -7,9 +8,21 @@ class Field:
         self.field_list: List[Domino] = []
 
     def append_left(self, domino: Domino):
+        if not len(self.field_list) == 0 and not domino.contain_element(self.get_left().left_side):
+            raise IllegalMoveError()
+
+        if len(self.field_list) != 0 and domino.right_side != self.get_left().left_side:
+            domino.switch_sides()
+
         self.field_list.insert(0, domino)
 
     def append_right(self, domino: Domino) -> None:
+        if not len(self.field_list) == 0 and not domino.contain_element(self.get_right().right_side):
+            raise IllegalMoveError()
+
+        if len(self.field_list) != 0 and domino.left_side != self.get_right().right_side:
+            domino.switch_sides()
+
         self.field_list.append(domino)
 
     def is_draw(self) -> bool:
@@ -26,6 +39,12 @@ class Field:
             return False
 
         return True
+
+    def get_left(self) -> Domino:
+        return self.field_list[0]
+
+    def get_right(self) -> Domino:
+        return self.field_list[len(self.field_list) - 1]
 
     def __str__(self):
         if len(self.field_list) > 6:

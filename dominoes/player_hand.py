@@ -34,3 +34,6 @@ class PlayerHand:
 
     def append(self, domino: Domino) -> None:
         self.dominoes.append(domino)
+
+    def insert(self, number: int, domino: Domino) -> None:
+        self.dominoes.insert(number - 1, domino)

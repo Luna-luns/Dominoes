@@ -32,6 +32,9 @@ class DominoStock:
         self.domino_list.remove(domino)
         return domino
 
+    def is_empty(self) -> bool:
+        return len(self.domino_list) == 0
+
 
 def from_raw_list(raw_list: list) -> DominoStock:
     return DominoStock([Domino(elem[0], elem[1]) for elem in raw_list])

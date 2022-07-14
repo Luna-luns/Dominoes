@@ -20,11 +20,6 @@ class Game:
 
     def play(self):
         while True:
-            if self.field.is_draw():
-                self.show_game_info(self.player_holder.player_1, Status.DRAW)
-                self.show_game_info(self.player_holder.player_2, Status.DRAW)
-                break
-
             if self.player_holder.player_1.get_hand().size() == 0:
                 self.show_game_info(self.player_holder.player_1, Status.PLAYER_WIN)
                 self.show_game_info(self.player_holder.player_2, Status.OPPONENT_WIN)
@@ -33,6 +28,11 @@ class Game:
             if self.player_holder.player_2.get_hand().size() == 0:
                 self.show_game_info(self.player_holder.player_1, Status.OPPONENT_WIN)
                 self.show_game_info(self.player_holder.player_2, Status.PLAYER_WIN)
+                break
+
+            if self.field.is_draw():
+                self.show_game_info(self.player_holder.player_1, Status.DRAW)
+                self.show_game_info(self.player_holder.player_2, Status.DRAW)
                 break
 
             self.show_game_info(self.player_holder.player_1, self.player_holder.get_status(self.player_holder.player_1))

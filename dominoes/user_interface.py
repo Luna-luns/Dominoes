@@ -41,6 +41,14 @@ def print_status(status: Status) -> None:
 
 def ask_number() -> int:
     try:
-        return int(input())
+        return int(input().strip())
     except ValueError:
         raise InputError()
+
+
+def approve_comp_move() -> str:
+    return input()
+
+
+def print_error(error: Exception) -> None:
+    print(error)
