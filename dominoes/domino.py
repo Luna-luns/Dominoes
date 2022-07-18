@@ -27,3 +27,6 @@ class Domino:
 
     def __str__(self):
         return f'[{self.left_side}, {self.right_side}]'
+
+    def __iter__(self):
+        return [self.left_side, self.right_side].__iter__()

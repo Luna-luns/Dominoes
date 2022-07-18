@@ -37,3 +37,11 @@ class PlayerHand:
 
     def insert(self, number: int, domino: Domino) -> None:
         self.dominoes.insert(number - 1, domino)
+
+    def count_numbers(self) -> dict:
+        dictionary = {}
+        for domino in self.dominoes:
+            for num in domino:
+                dictionary[num] = dictionary.get(num, 0) + 1
+
+        return dictionary
